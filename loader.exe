@@ -1,0 +1,15 @@
+import os
+import random
+import time
+import ctypes
+
+# Generate random 40-digit numbers for 20 seconds
+start_time = time.time()
+while time.time() - start_time < 20:
+    random_number = ''.join(str(random.randint(0, 9)) for _ in range(40))
+    print(random_number)
+
+# Print "connected to roblox client" in green text
+ctypes.windll.kernel32.SetConsoleTextAttribute(ctypes.windll.kernel32.GetStdHandle(-11), 2)
+print("connected to roblox client")
+ctypes.windll.kernel32.SetConsoleTextAttribute(ctypes.windll.kernel32.GetStdHandle(-11), 7)
